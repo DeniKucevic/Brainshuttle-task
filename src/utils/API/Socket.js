@@ -26,10 +26,16 @@ const joinGame = (boardId, game, setGame) => {
         } else {
             window.localStorage.setItem('seat', 2)
         }
+        alert(`${responseCode.player.name} has joined the game!`)
     })
     socket.on('win', responseCode => {
-        alert('You won!')
-        console.log(`Ack: ${responseCode}`)
+
+        if (id === responseCode.player.id) {
+            alert('You won!')
+        } else {
+            alert('You lost :(')
+        }
+        console.log(responseCode)
         socket.emit('restart', boardId, responseCode => {
             console.log(`Ack: ${responseCode}`)
         })
@@ -37,6 +43,7 @@ const joinGame = (boardId, game, setGame) => {
     })
     socket.on('tie', responseCode => {
         alert('Result is tie')
+        console.log(responseCode)
         socket.emit('restart', boardId, responseCode => {
         })
 
