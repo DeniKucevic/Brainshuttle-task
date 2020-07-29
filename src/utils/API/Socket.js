@@ -45,6 +45,7 @@ const joinGame = (boardId, game, setGame) => {
         alert('Result is tie')
         console.log(responseCode)
         socket.emit('restart', boardId, responseCode => {
+            console.log(`Ack: ${responseCode}`)
         })
 
 
