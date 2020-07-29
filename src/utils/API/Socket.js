@@ -26,7 +26,9 @@ const joinGame = (boardId, game, setGame) => {
         } else {
             window.localStorage.setItem('seat', 2)
         }
-        alert(`${responseCode.player.name} has joined the game!`)
+        if (window.localStorage.getItem('seat') !== null) {
+            alert(`${responseCode.player.name} has joined the game!`)
+        }
     })
     socket.on('win', responseCode => {
 
