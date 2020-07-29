@@ -1,0 +1,156 @@
+.fields {
+  display: grid;
+  align-content: space-around;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  row-gap: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  row-gap: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #ffffffd8;
+  height: 95%;
+  width: 95%;
+  border-radius: 15px;
+  transition: background-color 0.5s ease;
+}
+
+.grid-container:hover {
+  background-color: #dadadad8;
+}
+
+.button {
+  grid-area: button;
+}
+
+.players {
+  grid-area: players;
+}
+
+.pagination {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pagination button {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination button.active {
+  background-color: #15d798;
+  color: white;
+  border-radius: 5px;
+}
+
+.join-button {
+  background: #f07f01;
+  border-radius: 1000px;
+  padding: 17px 14px;
+  color: #ffffff;
+  display: inline-block;
+  font: normal bold 100%/1 "Komika", cursive;
+  text-align: center;
+}
+.join-button:hover {
+  background-color: #5cbf2a;
+}
+.join-button:active {
+  position: relative;
+  top: 1px;
+}
+
+.create-board {
+  background: #f07f01;
+  border-radius: 11px;
+  padding: 8px 45px;
+  color: #ffffff;
+  display: inline-block;
+  font: normal bold 26px/1 "Komika", cursive;
+  text-align: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.player-boards-wrapper {
+  max-width: 100vh;
+}
+
+@media (max-width: 500px) {
+  .app {
+    height: auto;
+  }
+  .fields {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+.welcome-header {
+  color: white;
+  text-shadow: 1px 5px 5px black;
+  background-image: linear-gradient(
+    to right,
+    rgba(43, 0, 200, 0),
+    rgba(21, 215, 152, 1),
+    rgba(43, 0, 200, 0)
+  );
+}
+
+.welcome-header-2 {
+  color: white;
+  text-shadow: 1px 5px 5px black;
+  background-image: linear-gradient(
+    to right,
+    rgba(43, 0, 200, 0),
+    rgb(8, 54, 40),
+    rgba(43, 0, 200, 0)
+  );
+}
